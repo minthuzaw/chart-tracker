@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chart Tracker</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/argon-design-system-free@1.2.0/assets/css/argon-design-system.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-body text-center shadow-sm">
+                <form action="">
+                    <input type="text" class="btn btn-dark text-white" placeholder="topic" name="topic">
+                    <input type="date" class="btn btn-dark text-white" name="date">
+                    <select name="type" id="" class="btn btn-dark">
+                        <option value="income">Income</option>
+                        <option value="outcome">Outcome</option>
+                    </select>
+                    <input type="submit" value="submit" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <div class="card card-body shadow-sm">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div class="">
+                            Pocket Money From Mom <br>
+                            <small class="text text-muted">
+                                11/04/2023
+                            </small>
+                        </div>
+                        <div class="text text-danger">
+                            -100Ks
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between mt-2">
+                        <div class="">
+                            Pocket Money From Mom <br>
+                            <small class="text text-muted">
+                                11/04/2023
+                            </small>
+                        </div>
+                        <div class="text text-danger">
+                            -100Ks
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between mt-2">
+                        <div class="">
+                            Pocket Money From Mom <br>
+                            <small class="text text-muted">
+                                11/04/2023
+                            </small>
+                        </div>
+                        <div class="text text-danger">
+                            -100Ks
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-body shadow-sm">
+                <div class="d-flex justify-content-between">
+                    <h5>Chart</h5>
+                    <div>
+                        <small class="text-success">Incomes : +2000Ks</small>
+                        <small class="text-danger ml-3">Outcomes : -1000Ks</small>
+                    </div>
+                </div>
+                <hr class="p-0 m-0">
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# Incomes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1,
+                backgroundColor: '#2DCE89'
+            },
+            {
+                label: '# Outcomes',
+                data: [5, 10, 2, 3, 1, 2],
+                borderWidth: 1,
+                backgroundColor: '#F5365C'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+</html>
